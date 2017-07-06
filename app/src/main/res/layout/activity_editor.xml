@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_margin"
+    tools:context=".EditorActivity">
+
+    <!-- Overview category -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/product_img"
+            android:layout_width="@dimen/item_height"
+            android:layout_height="@dimen/item_height"
+            android:src="@drawable/img1_product"></ImageView>
+
+        <TextView
+            android:id="@+id/product_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/fab_margin"
+            android:textSize="@dimen/text_size" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <!-- Label -->
+        <TextView
+            style="@style/CategoryStyle"
+            android:text="@string/category_overview" />
+
+        <!-- Input fields -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/fab_margin">
+
+            <!-- Name field -->
+            <EditText
+                android:id="@+id/edit_product_name"
+                style="@style/EditorFieldStyle"
+                android:hint="@string/hint_product_name"
+                android:inputType="textCapWords"
+                android:maxLength="25" />
+
+            <!-- Breed field -->
+            <EditText
+                android:id="@+id/edit_product_supplier_name"
+                style="@style/EditorFieldStyle"
+                android:hint="@string/hint_product_supplier"
+                android:inputType="textCapWords"
+                android:maxLength="25" />
+
+            <EditText
+                android:id="@+id/edit_product_supplier_mail"
+                style="@style/EditorFieldStyle"
+                android:hint="@string/hint_product_supplier_mail"
+                android:inputType="textEmailAddress" />
+
+            <LinearLayout
+                android:id="@+id/container_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Label -->
+                <TextView
+                    style="@style/CategoryStyle"
+                    android:text="@string/category_price" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:paddingLeft="@dimen/fab_margin">
+
+                    <!-- Price field -->
+                    <EditText
+                        android:id="@+id/edit_product_price"
+                        style="@style/EditorFieldStyle"
+                        android:hint="@string/hint_product_price"
+                        android:inputType="numberDecimal"
+                        android:maxLength="10" />
+
+                    <!-- Units for price (euro) -->
+                    <TextView
+                        android:id="@+id/label_price_units"
+                        style="@style/EditorUnitsStyle"
+                        android:text="@string/unit_product_price" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Order category -->
+    <LinearLayout
+        android:id="@+id/container_supplier"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_margin"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            style="@style/CategoryStyle"
+            android:text="@string/category_order" />
+
+        <!-- Input field -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="vertical">
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Order category -->
+    <LinearLayout
+        android:id="@+id/container_order"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button_minus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/colorAccent"
+            android:onClick="minusClicked"
+            android:text="@string/minus"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_button_size" />
+
+        <TextView
+            android:id="@+id/edit_product_quantity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:textAlignment="center"
+            android:textSize="@dimen/text_button_size" />
+
+        <Button
+            android:id="@+id/button_plus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/colorAccent"
+            android:onClick="plusClicked"
+            android:text="@string/plus"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_button_size" />
+
+    </LinearLayout>
+</LinearLayout>
